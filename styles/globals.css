@@ -1,16 +1,146 @@
-html,
-body {
-  padding: 0;
+/* Custom properties/variables  */
+:root {
+  --color-bgd: #131325;
+  --color-bgd2: #17173b;
+  --color-bgd3: rgba(0, 0, 0);
+  --color-bgd3-trsp: rgba(0, 0, 0, 0.68);
+  --color-font: #f3f3f3;
+  --color-font-light: #b8afaf;
+  --color-links: #a4a4ad;
+  --color-sub: rgb(238, 18, 11);
+}
+
+.dark-theme {
+  --color-bgd: #131325;
+  --color-bgd2: #17173b;
+  --color-bgd3: rgba(0, 0, 0);
+  --color-bgd3-trsp: rgba(0, 0, 0, 0.68);
+  --color-font: #f3f3f3;
+  --color-font-light: #b8afaf;
+  --color-links: #a4a4ad;
+  --color-sub: #ee120b;
+  --color-switch: gold;
+}
+.light-theme {
+  --color-bgd: #f3f3f3;
+  --color-bgd2: #e8e8c4;
+  --color-bgd3: rgba(255, 255, 255);
+  --color-bgd3-trsp: rgba(255, 255, 255, 0.68);
+
+  --color-font: #131325;
+  --color-links: #5b5b52;
+  --color-font-light: #475050;
+  --color-sub: #ee120b;
+  --color-switch: #0026ff;
+}
+
+/* Base reset */
+* {
   margin: 0;
+  padding: 0;
+}
+
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  /* user-select: none;*/
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 58%;
+  }
+}
+
+@media (max-width: 460px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/* Base styles */
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--color-bgd);
+  color: var(--color-font-light);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+h1,
+h2 {
+  font-weight: 700;
+  text-align: center;
 }
 
-* {
-  box-sizing: border-box;
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4.2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 10px;
+  object-fit: cover;
+  border: 1px solid blue;
+}
+
+button {
+  width: 15rem;
+  margin: 0 5px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--color-font);
+  background-color: var(--color-bgd2);
+  border: 2px solid var(--color-font);
+  border-radius: 10px;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--color-font);
+  color: var(--color-bgd2);
+  outline: none;
+}
+button:active {
+  color: var(--color-sub);
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+@media (max-width: 592px) {
+  button {
+    width: 10rem;
+  }
 }

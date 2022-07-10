@@ -1,0 +1,67 @@
+$hover_color: blueviolet;
+
+.container {
+  min-width: 350px;
+}
+
+.headerDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: space-between;
+  align-items: flex-start;*/
+  font-weight: 700;
+  height: 70px;
+  background-color: var(--color-bgd3);
+  padding: 0 10px;
+  position: fixed;
+  z-index: 1;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.main {
+  padding-top: 75px;
+  z-index: 0;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--color-font);
+}
+
+.chatDiv {
+  margin: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.displayDiv {
+  max-height: 70vh;
+  width: 100%;
+  overflow-y: auto;
+}
+.logoDiv {
+  padding: 5px;
+  color: var(--color-font);
+}
+.userInfosDiv {
+  display: flex;
+  justify-content: space-between;
+}
+.userNameDiv {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.avatarDiv {
+  position: relative;
+}
+
+@media (max-width: 592px) {
+  .displayDiv {
+    height: 65vh;
+  }
+}

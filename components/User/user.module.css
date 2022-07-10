@@ -1,0 +1,138 @@
+.userLogin {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  top: 0;
+  right: 100%;
+  font-size: 1.8rem;
+  color: var(--color-font-light);
+  background-color: var(--color-bgd3);
+  width: 100%;
+  min-width: 350px;
+  padding-left: 2%;
+  padding-right: 1%;
+  z-index: 3;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 16px 16px rgba(0, 0, 0, 0.23);
+  opacity: 0.95;
+  transition: left 0.3 ease-out;
+  overflow: none;
+  padding: 3rem;
+}
+.userLoginTitle {
+  color: var(--color-font);
+}
+.closeLogin {
+  color: var(--color-sub);
+  font-size: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 2%;
+  margin-left: 80%;
+  position: absolute;
+}
+
+.closeLogin:hover {
+  color: rgb(238, 124, 11);
+  opacity: 100%;
+  transform: rotate(90deg);
+}
+
+.userIcon {
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  margin-right: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 5px;
+  width: 20px;
+  display: block;
+  font-size: 2rem;
+}
+
+.loginTxt {
+  position: absolute;
+  top: 15px;
+  left: -5px;
+  font-size: 1.5rem;
+}
+.logouTxt {
+  position: absolute;
+  top: 15px;
+  left: -12px;
+  font-size: 1.5rem;
+}
+.avatar {
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.usr {
+  position: absolute;
+  top: -14px;
+  left: -50%;
+  font-size: 1.5rem;
+  width: 150px;
+  display: none;
+}
+
+.clearButton {
+  margin: 10px auto;
+  color: red;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px;
+}
+.signinContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 30px auto;
+  max-width: 100%;
+  min-height: 200px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  padding: 10px;
+}
+.loginTitle {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+.providerButton {
+  width: 250px;
+  margin: 10px;
+  font-weight: 700;
+}
+.nextAuthLogo {
+  width: 180px;
+}
+
+.logoutQuestion {
+  font-size: 2rem;
+  margin-top: 80px;
+  margin-bottom: 25px;
+}
+@media (max-width: 768px) {
+  .usr {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .signinContainer {
+    margin: 20px 5px;
+  }
+  .logoutQuestion {
+    font-size: 1.8rem;
+  }
+}
