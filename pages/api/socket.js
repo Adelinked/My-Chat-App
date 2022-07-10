@@ -1,4 +1,4 @@
-import { Server } from "Socket.IO";
+import { Server } from "socket.io";
 
 const Socket = async (req, res) => {
   if (!res.socket.server.io) {
