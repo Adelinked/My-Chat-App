@@ -111,6 +111,7 @@ ul {
   margin: 0 10px;
   object-fit: cover;
   border: 1px solid blue;
+  cursor: pointer;
 }
 
 button {

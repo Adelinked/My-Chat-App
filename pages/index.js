@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.scss";
 import ChatDisplay from "../components/ChatDisplay";
 import ChatInput from "../components/ChatInput";
 import Header from "../components/Header";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import SocketIOClient from "socket.io-client";
 
@@ -84,6 +84,7 @@ export default function Home() {
       controller?.abort();
     };
   }, [nbMessages]);
+
   return (
     <div className={styles.container}>
       <Head>
