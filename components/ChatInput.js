@@ -1,11 +1,15 @@
 import { useState, useEffect, useRef, memo } from "react";
 import axios from "axios";
 import styles from "./Messages.module.scss";
+import { useSession } from "next-auth/react";
 
 const ChatInput = () => {
   const inputRef = useRef();
   const [text, setText] = useState("");
   const [disableSendBut, setDisableSendBut] = useState(false);
+  const { data: session } = useSession();
+
+  const userName = session?.user?.name;
 
   const sendText = async () => {
     try {
@@ -37,9 +41,9 @@ const ChatInput = () => {
       document.removeEventListener("keydown", handleKeyPress);
     };
   });
-  /*useEffect(() => {
+  useEffect(() => {
     inputRef.current.focus();
-  }, []);*/
+  }, []);
   const handleKeyPress = (e) => {
     if (e.keyCode === 13) {
       /*Enter key code*/ handleClick();
@@ -48,6 +52,7 @@ const ChatInput = () => {
   return (
     <div className={styles.chatInputDiv}>
       <input
+        placeholder={`write something ${userName ?? ""} ...`}
         className={styles.chatInput}
         onChange={(e) => {
           setText(e.target.value);

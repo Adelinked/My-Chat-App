@@ -21,7 +21,11 @@ export default function Header() {
         <div className={styles.userNameDiv}>
           <div title={`connected as ${userName}`}>{userName}</div>
           <div className={styles.avatarDiv}>
-            <img className="avatar" src={userImg} alt="photo"></img>
+            <img
+              className="avatar"
+              src={userImg ?? "/anonymous.png"}
+              alt={`${userName} photo`}
+            ></img>
           </div>
         </div>
         <UserNav setShowLogin={setShowLogin} />

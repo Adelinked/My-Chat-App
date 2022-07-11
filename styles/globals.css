@@ -110,7 +110,6 @@ ul {
   display: block;
   margin: 0 10px;
   object-fit: cover;
-  border: 1px solid blue;
   cursor: pointer;
 }
 
@@ -119,7 +118,7 @@ button {
   margin: 0 5px;
   padding: 5px;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--color-font);
   background-color: var(--color-bgd2);
   border: 2px solid var(--color-font);
