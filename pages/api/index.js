@@ -64,19 +64,16 @@ export default async function handler(req, res) {
       fs.readFile(fname, "utf8", (error, data) => {
         if (error) {
           res.status(404).json({ error: "no chat data" });
-          return;
         } else {
           readData = JSON.parse(data);
           res.status(200).json({ readData });
         }
-
-        // console.log(readData);
       });
 
       break;
     default:
-      //res.status(400).json({ msg: "Invalid request!" });
-      res.end();
+      res.status(400).json({ msg: "Invalid request!" });
+
       break;
   }
 }
