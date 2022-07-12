@@ -71,7 +71,6 @@ export default function Home() {
       try {
         const res = await axios.get("/api", { signal: controller.signal });
         setMessages(res.data.readData);
-        //console.log(data.data.readData);
         controller = null;
         const chatDisplay = document.getElementById("messages");
         chatDisplay.scroll({
