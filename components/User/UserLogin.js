@@ -7,6 +7,7 @@ import { deepOrange } from "@mui/material/colors";
 import { styled } from "@mui/material/styles";
 import Image from "next/image";
 import { toast } from "react-toastify";
+import { FaTimes, FaGoogle, FaFacebook } from "react-icons/fa";
 
 export default function UserLogin({ csrfToken, showLogin, setShowLogin }) {
   const [providers, setProviders] = useState({});
@@ -99,7 +100,7 @@ export default function UserLogin({ csrfToken, showLogin, setShowLogin }) {
           setShowLogin(false);
         }}
       >
-        <i className="fa fa-close"></i>
+        <FaTimes />
       </span>
       <div className={styles.signinContainer}>
         {session ? (
@@ -154,7 +155,7 @@ export default function UserLogin({ csrfToken, showLogin, setShowLogin }) {
                           variant="contained"
                         >
                           Sign in with {provider.name} &nbsp;&nbsp;
-                          <i className="fa fa-google"></i>
+                          <FaGoogle />
                         </GoogleButton>
                       ) : (
                         <Button
@@ -170,8 +171,7 @@ export default function UserLogin({ csrfToken, showLogin, setShowLogin }) {
                           type="submit"
                         >
                           <span>
-                            Sign in with {provider.name}{" "}
-                            <i className="fa fa-facebook"></i>
+                            Sign in with {provider.name} <FaFacebook />
                           </span>
                         </Button>
                       )}

@@ -6,34 +6,12 @@ import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import SocketIOClient from "socket.io-client";
+import Footer from "../components/Footer";
 
-export default function Home() {
-  const [messages, setMessages] = useState([]);
+export default function Home({ readData }) {
+  const [messages, setMessages] = useState(readData ?? []);
   const [nbMessages, setNbMessages] = useState(0);
   const [connected, setConnected] = useState(false);
-
-  /* useEffect(() => {
-    let controller = new AbortController();
-    let intervalId;
-    const getData = async () => {
-      try {
-        const res = await axios.get("/api", { signal: controller.signal });
-        setMessages(res.data.readData);
-        //console.log(data.data.readData);
-        controller = null;
-        const chatDisplay = document.getElementById("messages");
-        chatDisplay.scroll({
-          top: chatDisplay.scrollHeight,
-          behavior: "smooth",
-        });
-      } catch (e) {}
-    };
-    intervalId = setInterval(getData, 3500);
-    return () => {
-      clearInterval(intervalId);
-      controller?.abort();
-    };
-  }, [messages]);*/
 
   useEffect(() => {
     // connect to socket server
@@ -65,25 +43,6 @@ export default function Home() {
     if (socket) return () => socket.disconnect();
   }, []);
 
-  useEffect(() => {
-    let controller = new AbortController();
-    (async () => {
-      try {
-        const res = await axios.get("/api", { signal: controller.signal });
-        setMessages(res.data.readData);
-        controller = null;
-        const chatDisplay = document.getElementById("messages");
-        chatDisplay.scroll({
-          top: chatDisplay.scrollHeight,
-          behavior: "smooth",
-        });
-      } catch (e) {}
-    })();
-    return () => {
-      controller?.abort();
-    };
-  }, [nbMessages]);
-
   return (
     <div className={styles.container}>
       <Head>
@@ -99,6 +58,14 @@ export default function Home() {
           <ChatInput />
         </div>
       </main>
+      <Footer />
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const data = await axios(`${process.env.BASE_URL}/api`);
+  const { readData } = data.data;
+
+  return { props: { readData } };
 }

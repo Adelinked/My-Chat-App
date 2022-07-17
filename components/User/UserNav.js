@@ -1,5 +1,6 @@
 import styles from "./user.module.css";
 import { useSession } from "next-auth/react";
+import { FaUser, FaUserPlus } from "react-icons/fa";
 
 export const UserNav = ({ setShowLogin }) => {
   const { data: session } = useSession();
@@ -26,9 +27,9 @@ export const UserNav = ({ setShowLogin }) => {
         </>
       )}
       {!session ? (
-        <i className="fa fa-user-plus"></i>
+        <FaUserPlus />
       ) : (
-        <i className="fa fa-user" title={`Connected as ${userName}`}></i>
+        <FaUser title={`Connected as ${userName}`} />
       )}
     </span>
   );

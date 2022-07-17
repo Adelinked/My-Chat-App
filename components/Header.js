@@ -3,7 +3,7 @@ import { useSession } from "next-auth/react";
 import UserLogin from "./User/UserLogin";
 import { UserNav } from "./User/UserNav";
 import { useState } from "react";
-
+import { IoIosPeople } from "react-icons/io";
 export default function Header() {
   const { data: session } = useSession();
   const [showLogin, setShowLogin] = useState(false);
@@ -16,7 +16,10 @@ export default function Header() {
 
   return (
     <div className={styles.headerDiv}>
-      <div className={styles.logoDiv}>My Chat app</div>
+      <div className={styles.logoDiv}>
+        My Chat app
+        <IoIosPeople style={{ fontSize: "2rem" }} />
+      </div>
       <div className={styles.userInfosDiv}>
         <div className={styles.userNameDiv}>
           <div title={`connected as ${userName}`}>{userName}</div>
