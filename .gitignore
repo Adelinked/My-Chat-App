@@ -32,5 +32,4 @@ yarn-error.log*
 .vercel
 
 # ChatFiles
-/chatFiles
-chat.json
+chatFiles/chat.json
