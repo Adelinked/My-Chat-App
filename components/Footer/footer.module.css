@@ -1,0 +1,15 @@
+.footerDiv {
+  padding: 5px 0;
+  font-weight: 600;
+  text-align: center;
+  min-width: 350px;
+  border-top: 2px var(--color-sub) solid;
+  background-color: var(--color-bgd2);
+  color: var(--color-font-light);
+}
+
+.footerParagraph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
